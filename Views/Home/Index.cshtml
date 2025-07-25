@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Sentiment Analysis";
+}
+
+<h2 class="mt-4 mb-3">Sentiment Analysis</h2>
+
+<form asp-action="Index" method="post">
+    <div class="form-group mb-3">
+        <label for="userComment">Enter your comment:</label>
+        <textarea name="userComment" id="userComment" class="form-control" rows="4" placeholder="Type your comment here..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Analyze</button>
+</form>
+
+@if (ViewBag.SentimentResult != null)
+{
+    <div class="alert alert-info mt-4">
+        <strong>Sentiment:</strong> @ViewBag.SentimentResult
+    </div>
+}
